@@ -1,16 +1,46 @@
-## Hi there 👋
+```jsx
+import React from "react";
 
-<!--
-**Sccot-dev/Sccot-dev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+const profile = {
+  name: "Khaled Alharbi",
+  role: "Full-Stack Developer",
+  age: 21,
+  location: "United Arab Emirates",
+  hobbies: ["Programming", "Football"],
+  languages: ["Arabic", "English"],
+  techStack: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Tailwind",
+    "Node.js",
+    "NestJS",
+    "MySQL",
+    "Python",
+  ],
+};
 
-Here are some ideas to get you started:
+const Section = ({ title, items }) => (
+  <p>
+    <strong>{title}:</strong> {items.join(" • ")}
+  </p>
+);
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+export default function AboutMe() {
+  const { name, role, age, location, hobbies, languages, techStack } = profile;
+
+  return (
+    <div className="card">
+      <h1>👨‍💻 About Me</h1>
+
+      <p>
+        Hello, I'm <strong>{name}</strong> — {role} ({age}) based in {location}.
+      </p>
+
+      <Section title="Hobbies" items={hobbies} />
+      <Section title="Languages" items={languages} />
+      <Section title="Tech Stack" items={techStack} />
+    </div>
+  );
+}
+```
